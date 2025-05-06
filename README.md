@@ -26,11 +26,11 @@ export script ScriptToLoad.txt
 
 ### Open STM32CubeMX
 ```bash
-OpenMx
+OpenMX
 ```
 
 ```bash
-OpenMx STM32F411CEUx
+OpenMX STM32F411CEUx
 ```
 
 ### Load STM32CubeMX Script
