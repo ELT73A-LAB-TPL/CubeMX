@@ -152,9 +152,14 @@ exit /b
 
 
 :help
-echo Usage: LoadMX [ProjectName] [ScriptFile] [CodeFlag]
+echo Usage: LoadMX [--help, -h, /?, -i]
 echo Options:
 echo    --help, -h, /?   Show this help message
+echo    -i   	    Run STM32CubeMX interactively
+echo Example: LoadMX -i
+echo.
+echo Usage: LoadMX [ProjectName] [ScriptFile] [CodeFlag]
+echo Options:
 echo    ProjectName      Set the project name (default: STM32F411CEUx)
 echo    ScriptFile       Set the script file name (default: BaseScript.txt)
 echo    CodeFlag         Generate code? (default: N)
