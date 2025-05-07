@@ -5,8 +5,6 @@ setlocal EnableDelayedExpansion
 set "DEFAULT_NAME=STM32F411CEUx"
 set "DEFAULT_SCRIPT=BaseScript.txt"
 set "DEFAULT_FLAG=N"
-
-:: Set Default MCU Name
 set "DEFAULT_MCU=STM32F411C(C-E)Ux"
 
 :: Parse Arguments
@@ -108,16 +106,8 @@ if defined STM32CubeMX_PATH (
     set "STM32CUBEMX_PATH=%STM32CubeMX_PATH%\STM32CubeMX.exe"
 )
 
-:: if provided script file dont exists, load default MCU
-if exist "%LOAD_SCRIPT%" (
-    echo File %LOAD_SCRIPT% exists!
-	copy /Y %LOAD_SCRIPT% %PJT_FOLDER%\LoadScript.txt
-) else (
-    echo File %LOAD_SCRIPT% does not exist.
-	echo load %DEFAULT_MCU% >> %PJT_FOLDER%\LoadScript.txt
-)
-
 :: Add project info
+copy /Y %LOAD_SCRIPT% %PJT_FOLDER%\LoadScript.txt
 echo project name %PJT_NAME% >> %PJT_FOLDER%\LoadScript.txt
 echo project toolchain "CMake" >> %PJT_FOLDER%\LoadScript.txt
 echo project path %SCRIPT_PATH% >> %PJT_FOLDER%\LoadScript.txt
@@ -152,7 +142,6 @@ if %ERRORLEVEL% neq 0 (
 echo STM32CubeMX executed successfully.
 pause
 endlocal
-
 
 :help
 echo Usage: LoadMX [ProjectName] [ScriptFile] [CodeFlag]
