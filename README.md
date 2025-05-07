@@ -24,17 +24,16 @@ To generate a script
 export script ScriptToLoad.txt
 ```
 
-### Open STM32CubeMX
-Opens STM32CubeMX and loads STM32F411CEUx
-```bash
-OpenMX
-```
-Opens STM32CubeMX and loads provided MCU
-```bash
-OpenMX STM32F411CEUx
-```
-
 ### Load STM32CubeMX Script
+
+Call for Help (--help, -h, /?)
+```bash
+LoadMX --help
+```
+Run STM32CubeMX interactively
+```bash
+LoadMX -i
+```
 Opens STM32CubeMX and loads default values for Project Name, Script and Code Generation (STM32F411CEUx, BaseScript.txt and N)
 ```bash
 LoadMX
@@ -52,3 +51,13 @@ Opens STM32CubeMX with provided Project Name, Script Name and generate code
 ```bash
 LoadMX ProjectName ScriptName.txt Y
 ``` 
+
+### Open STM32CubeMX
+Opens STM32CubeMX and loads STM32F411CEUx
+```bash
+OpenMX
+```
+Opens STM32CubeMX and loads provided MCU
+```bash
+OpenMX STM32F411CEUx
+```
