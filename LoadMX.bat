@@ -125,6 +125,7 @@ if /i "%GC_FLAG%"=="Y" (
     echo Invalid entry. Please enter Y or N.
 )
 
+
 :: Run the command
 echo Running STM32CubeMX...
 if defined SCRIPT_FILE (
@@ -142,13 +143,8 @@ if %ERRORLEVEL% neq 0 (
 
 echo STM32CubeMX executed successfully.
 pause
-endlocal
-
-:: Run STM32CubeMX interactively if "-i" is provided
-:interactive
-echo Running STM32CubeMX in interactive mode...
-"%STM32CubeMX_PATH%\jre\bin\java" -jar "%STM32CubeMX_PATH%\STM32CubeMX.exe" -i
 exit /b
+endlocal
 
 
 :help
@@ -164,4 +160,10 @@ echo    ProjectName      Set the project name (default: STM32F411CEUx)
 echo    ScriptFile       Set the script file name (default: BaseScript.txt)
 echo    CodeFlag         Generate code? (default: N)
 echo Example: LoadMX MyProject MyScript.txt Y
+exit /b
+
+:: Run STM32CubeMX interactively if "-i" is provided
+:interactive
+echo Running STM32CubeMX in interactive mode...
+"%STM32CubeMX_PATH%\jre\bin\java" -jar "%STM32CubeMX_PATH%\STM32CubeMX.exe" -i
 exit /b
