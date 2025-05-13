@@ -51,13 +51,3 @@ Opens STM32CubeMX with provided Project Name, Script Name and generate code
 ```bash
 LoadMX ProjectName ScriptName.txt Y
 ``` 
-
-### Open STM32CubeMX
-Opens STM32CubeMX and loads STM32F411CEUx
-```bash
-OpenMX
-```
-Opens STM32CubeMX and loads provided MCU
-```bash
-OpenMX STM32F411CEUx
-```
